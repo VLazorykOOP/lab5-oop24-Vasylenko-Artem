@@ -1,25 +1,39 @@
 {
 	"version": "2.0.0",
-	"tasks": [ 
+	"tasks": [
 		{
-			"type": "cppbuild",
-			"label": "C/C++: g++.exe build active file",
-			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
-			"args": [
-				"-fdiagnostics-color=always",
-				"-g",
-				"${workspaceFolder}\\ooplab5t\\*.cpp",
-				"-o",
-				"${workspaceFolder}\\lab5oop.exe"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
+			"label": "Build C++",
+			"type": "shell",
+			"command": "make build",
 			"group": "build",
-			"detail": "compiler: C:\\msys64\\mingw64\\bin\\g++.exe"
+			"problemMatcher": ["$gcc"],
+			"detail": "Compiling C++ files"
+		},
+		{
+			"label": "Clear build/",
+			"type": "shell",
+			"command": "make clean",
+			"problemMatcher": ["$gcc"],
+			"detail": "Delete dir build/"
+		},
+		{
+			"label": "Run C++",
+			"type": "shell",
+			"command": "make run",
+			"dependsOn": "Build C++",
+			"problemMatcher": [],
+			"detail": "Running the compiled C++ program"
+		},
+		{
+			"label": "Build and Run C++",
+			"type": "shell",
+			"dependsOn": ["Build C++", "Run C++"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"detail": "Building and running the C++ program"
 		}
 	]
 }
