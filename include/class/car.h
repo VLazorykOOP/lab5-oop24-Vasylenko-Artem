@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 
 #include "console.h"
 #include "taskManager.h"
@@ -16,15 +17,15 @@ protected:
 
 public:
 	Car(string brand, unsigned int cylinders, unsigned int power);
-	~Car();
+	virtual ~Car();
 
-	string getBrand();
-	unsigned int getCylinders();
-	unsigned int getPower();
+	string getBrand() const;
+	unsigned int getCylinders() const;
+	unsigned int getPower() const;
 
 	void setBrand(string brand);
 	void setCylinders(unsigned int cylinders);
 	void setPower(unsigned int power);
 
-	void printInfo();
+	virtual void printInfo() const;
 };

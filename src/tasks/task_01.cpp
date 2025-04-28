@@ -9,11 +9,17 @@ using namespace std;
 
 void task_01()
 {
-	Car car("Audi", 4, 200);
-	car.setBrand("Toyota");
+	Car car("Toyota", 4, 150);
 	car.printInfo();
 
-	Lorry lorry("Mercedes", 6, 300);
-	lorry.setBrand("Honda");
+	cout << "------------------" << endl;
+
+	Lorry lorry("Volvo", 6, 400, 12000);
+	lorry.printInfo();
+
+	lorry.setBrand("Scania");
+	lorry.setLoadCapacity(15000);
+
+	cout << "\nAfter modifications:" << endl;
 	lorry.printInfo();
 }
