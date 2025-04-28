@@ -1,4 +1,4 @@
-# Lab work #4
+# Lab work #5
 
 ### Build and Run C++ Program (Macos / Linux)
 
